@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ujh5lifk721w"]
+
+[ext_resource type="Script" path="res://scripts/machine.gd" id="1_io5b7"]
+[ext_resource type="Texture2D" uid="uid://cyyxkygpwpiai" path="res://assets/trash/machine4.png" id="2_w0qwa"]
+
+[node name="Node2D" type="Node2D"]
+z_index = -10
+script = ExtResource("1_io5b7")
+
+[node name="gobutton" type="Button" parent="."]
+offset_left = -129.0
+offset_top = -55.0
+offset_right = 30.0
+offset_bottom = 39.0
+
+[node name="cancelbutton" type="Button" parent="."]
+offset_left = 45.0
+offset_top = -55.0
+offset_right = 135.0
+offset_bottom = 38.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_w0qwa")
+
+[connection signal="pressed" from="gobutton" to="." method="_on_gobutton_pressed"]
+[connection signal="pressed" from="cancelbutton" to="." method="_on_cancelbutton_pressed"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bisrkins1ngkx"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_pmvg7"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_pmvg7")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 204.5
+offset_top = 16.0
+offset_right = 515.5
+offset_bottom = 102.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 60
+text = "Make a 23!"
+
+[node name="cupschoice" type="Node2D" parent="."]
+
+[node name="cupsimage" type="Node2D" parent="."]
+
+[node name="cupresult" type="Node2D" parent="."]
