@@ -7,8 +7,8 @@ var cupresultscene: PackedScene = load("res://scenes/cupresult.tscn")
 
 var obj
 var emptycup
-var choices = [5,6,7,8]
-var targetnumber = 11
+var choices = [] # [5,6,7,8]
+var targetnumber #=  11
 
 #index yg dipilih
 var boxindex1 = null
@@ -34,11 +34,30 @@ func _ready():
 	$cupresult.add_child(emptycup)
 	
 	#generate array choices angka nya dulu 
-	#...
+	generatechoicesarray()
 	#baru generate cups choice nya
 	generatecups()
 	
+func generatechoicesarray():
+	#randomize number from 0 to 10
+	var numbers = range(11)   # 0–10
+	numbers.shuffle()
+	
+	#get choicesarray
+	for i in range(4):
+		choices.append(numbers[i])
+			
+	#randomize index 0 to 3		
+	var nums = [0, 1, 2, 3]
+	nums.shuffle()
 
+	#get two index
+	var index1 = nums[0]
+	var index2 = nums[1]
+	
+	targetnumber = choices[index1] + choices[index2]
+	$Label.text = "Make a " + str(targetnumber) 
+	
 func generatecups():
 	for child in $cupschoice.get_children():
 		child.queue_free()
@@ -148,4 +167,9 @@ func machineprocess():
 		
 		var n = str(result)[-1]
 		obj.get_node("AnimatedSprite2D").play(n)
+		
+		if result == targetnumber:
+			print("correct")
+		else :
+			print("wrong")
 
