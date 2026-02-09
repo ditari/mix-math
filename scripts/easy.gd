@@ -15,8 +15,9 @@ var b_empty
 var b_pour_result
 var b_result
 
-var choices = [] 
-var targetnumber 
+var question_number = 0
+var choices
+var target_number 
 
 #index yg dipilih
 var b_index1 = null
@@ -36,6 +37,20 @@ func _ready():
 	machine.connect("reset", machine_reset)	
 	machine.connect("go", machine_process)
 	
+	#generate new questions
+	generate_new_questions()
+	
+func _process(delta):
+	pass
+	
+func generate_new_questions():
+	#clean up
+	processed = false
+	clicked = 0		
+	
+	#question increased
+	question_number = question_number+1
+	
 	#place empty bottle
 	b_empty = b_empty_scene.instantiate()
 	b_empty.position = Vector2(360,775) 
@@ -44,13 +59,12 @@ func _ready():
 	#generate array choices angka nya dulu 
 	generate_choices_array()
 	#baru generate choice bottle nya
-	generate_choices_bottle()
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	generate_choices_bottle()		
 	
 func generate_choices_array():
+	#emptying the choices first
+	choices = []
+	
 	#randomize number from 0 to 10
 	var numbers = range(11)   # 0–10
 	numbers.shuffle()
@@ -67,8 +81,8 @@ func generate_choices_array():
 	var index1 = nums[0]
 	var index2 = nums[1]
 	
-	targetnumber = choices[index1] + choices[index2]
-	$label.text = "Make a " + str(targetnumber) + "!"
+	target_number = choices[index1] + choices[index2]
+	$question_label.text = "Make a " + str(target_number) + "!"
 	
 func generate_choices_bottle():
 	for child in $bottle_choice.get_children():
@@ -79,7 +93,6 @@ func generate_choices_bottle():
 	generate_one_bottle(2,choices[2])
 	generate_one_bottle(3,choices[3])	
 
-	
 func generate_one_bottle(index, number):
 	var obj = b_choice_scene.instantiate()
 	
@@ -109,7 +122,7 @@ func choice_pressed(index,number):
 	var pour_bottle
 	var textlabel = str(number)
 	
-	if clicked <2:
+	if clicked <2 and processed == false:
 		
 		#hapus yg di bawah dulu	
 		delete_bottle_choice(index)
@@ -150,52 +163,37 @@ func delete_bottle_choice(index):
 			break
 
 func machine_reset():
-	if clicked>0:
-		for child in $bottle_choice.get_children():
-			child.queue_free()
+	if processed:
+		return
+		
+	clicked = 0
+	processed = false
+	b_index1 = null
+	b_index2 = null
+	result = null
+	
+	for child in $bottle_choice.get_children():
+		child.queue_free()
 
-		generate_choices_bottle()
+	generate_choices_bottle()
+	
+	machine.set_left("")
+	machine.set_right("")
 		
-		#reset label pada machine
-		if clicked == 1:
-			machine.set_left("")
-		else:	
-			machine.set_left("")
-			machine.set_right("")	
-		
-		#kalau ada result bottle, delete result bottle dan place empty cup
-		#kalau ga ada ya ga usah ngapa2in masih ada empty cup
-		if processed==true:
-			
-			processed = false
-			
-			b_result.queue_free()
-			
-			b_empty = b_empty_scene.instantiate()
-			b_empty.position = Vector2(360,775) 
-			add_child(b_empty)	
-		
-		#reset clicker
-		clicked = 0
-		
-		#reset index
-		b_index1 = null
-		b_index2 = null
-		
-		#reset result
-		result = null
+
 		
 func machine_process():
 	if clicked == 2:
-		
+		#status = sudah di proses
 		processed = true
-		
 		#hitung result	
 		result = choices[b_index1] + choices[b_index2]
+		var correct = result == target_number
+		#tambah score di sini
 		
 		#delete emptycup
-		b_empty.queue_free()
-		#b_empty = null
+		if is_instance_valid(b_empty):
+			b_empty.queue_free()
 		
 		#animasi bottle pour result, sebentar lalu dihapus
 		b_pour_result = b_pour_result_scene.instantiate()
@@ -208,14 +206,36 @@ func machine_process():
 		await get_tree().create_timer(0.7).timeout
 		b_pour_result.queue_free()	
 		
+		
 		#delete label dari machine
 		machine.set_left("")
 		machine.set_right("")
+		
 		
 		#taruh bottle result
 		b_result = b_result_scene.instantiate()
 		b_result.position = Vector2(360,775) 
 		add_child(b_result)
 		
+		#animasi bottle result sebentar
 		b_result.get_node("AnimatedSprite2D").play(n)
 		b_result.set_label(result)
+		
+		#animasi correct or wrong here
+		#sound juga
+		if correct :
+			$output_label.text = "CORRECT!"
+		else :
+			$output_label.text = "WRONG!"
+			
+		await get_tree().create_timer(0.7).timeout
+		b_result.queue_free()
+		
+		#clean up
+		$output_label.text = ""
+		b_index1 = null
+		b_index2 = null
+		result = null
+		
+		#generate new questions
+		generate_new_questions()

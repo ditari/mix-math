@@ -11,7 +11,7 @@ script = ExtResource("1_ckqlg")
 texture = ExtResource("2_kkar2")
 script = ExtResource("2_pnj76")
 
-[node name="label" type="Label" parent="."]
+[node name="question_label" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -24,5 +24,20 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "Make a 23!"
+horizontal_alignment = 1
+
+[node name="output_label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 5.0
+offset_top = 152.0
+offset_right = 720.0
+offset_bottom = 238.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
 
 [node name="bottle_choice" type="Node2D" parent="."]

@@ -1,12 +1,12 @@
-#extends Node2D
+extends Node2D
 
 #var index
 #var number
 
 #signal button_pressed
 
-#func set_label(t):
-#	$label.text = str(t)
+func set_label(t):
+	$label.text = str(t)
 	#number = t
 
 #func _on_button_pressed():
