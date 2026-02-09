@@ -4,13 +4,93 @@ F77D94 - E45770 - E02A4E red
 A8FF6A - 83FA4D - 6ED93F light green
 FEEA69 - FADD4C - FBD61B yellow
 C7A0D5 - AF7EC2 - 9C5EB6 purple
+
 FFA45D - FA8740 - FB6D18 orange
 3BB486 - 299B6B - 13834D dark green
 FFA2D4 - FA85BF - FB6DB3 pink
-CAC4C1 - BCB6B3 - ABA5A1 grey--- ini ga usah?
+CAC4C1 - BCB6B3 - ABA5A1 grey--- ini ga usah?---ganti brown aja gitu?
 8FDBFF - 71CBF7 - 41BDF6 light blue
 
 white
 #FFFFFF - #F2F2F2 - #E6E6E6
 brown
 #B8A18A - #7A5A44 - #3F2A1D
+
+-------
+
+bottle-choice = 132x150 - ada juga yang 132x151
+bottle-pour-right = 132 x 167
+bottle-result = 132 x 187
+bottle-empty = 132x151
+
+--------------------------------
+
+export android
+https://www.youtube.com/watch?v=dCLYMF32ZBE
+
+
+-------------------------------
+
+atom putih
+Photo by <a href="https://unsplash.com/@dkoi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">D koi</a> on <a href="https://unsplash.com/photos/water-droplets-on-a-surface-5nI9N2wNcBU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+	  
+glass bottle
+Photo by <a href="https://unsplash.com/@fadlifadlo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Liar Liur</a> on <a href="https://unsplash.com/photos/clear-glass-bottles-on-brown-wooden-shelf-g50ZxlXazWY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+microscope
+Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com/photos/white-and-black-microscope-on-white-surface-VkITYPupzSg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+shelves of things
+Photo by <a href="https://unsplash.com/@thefourthwxll?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Faustina Okeke</a> on <a href="https://unsplash.com/photos/laboratory-shelves-filled-with-glassware-and-equipment-v41sgDGz4ik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+white machine white shelf white things - things on the left	  
+Photo by <a href="https://unsplash.com/@revolution_in_filtration?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">RephiLe water</a> on <a href="https://unsplash.com/photos/a-white-machine-with-a-blue-screen-11LbnKUxOJE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+white machines and stuffs - from the front
+Photo by <a href="https://unsplash.com/@revolution_in_filtration?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">RephiLe water</a> on <a href="https://unsplash.com/photos/a-white-machine-with-a-blue-screen-11LbnKUxOJE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+	  
+zoom in things on desk
+Photo by <a href="https://unsplash.com/@nathan_rmx?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Nathan Rimoux</a> on <a href="https://unsplash.com/photos/laboratory-glassware-is-seen-in-a-scientific-experiment-H_w_0xZwZ0w?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+candies on jar
+Photo by <a href="https://unsplash.com/@girlwithredhat?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Girl with red hat</a> on <a href="https://unsplash.com/photos/pink-and-white-heart-shaped-candies-in-clear-glass-jar-07cg6G82ehQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+books and glass
+Photo by <a href="https://unsplash.com/@eladepure?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ela De Pure</a> on <a href="https://unsplash.com/photos/anti-aging-skincare-products-with-laboratory-glassware-lF57lMCQEtw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+chalkboard multi languages
+Photo by <a href="https://unsplash.com/@suinphoebe?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Suin Seong</a> on <a href="https://unsplash.com/photos/a-wall-covered-in-lots-of-writing-on-it-fDxpsxEuNTw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+chalkboard with equations - ada orang depannya
+Photo by <a href="https://unsplash.com/@silverkblack?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vitaly Gariev</a> on <a href="https://unsplash.com/photos/woman-writing-complex-formulas-on-a-chalkboard-wall-4wSQmHIlD0Q?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+chalkboard ada anak kecil depannya	  
+Photo by <a href="https://unsplash.com/@silverkblack?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vitaly Gariev</a> on <a href="https://unsplash.com/photos/young-boy-in-suit-studies-complex-math-equations-on-blackboard-VyCT-bp1AcQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+chalkboard ada anak kecil tapi lebih besar
+Photo by <a href="https://unsplash.com/@silverkblack?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vitaly Gariev</a> on <a href="https://unsplash.com/photos/boy-standing-before-a-blackboard-covered-in-equations-V1yA4dDTXg8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+kitchen 1	  
+Photo by <a href="https://unsplash.com/@collovhome?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Collov Home Design</a> on <a href="https://unsplash.com/photos/white-and-brown-kitchen-cabinet--aDGbdTsBZg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+kitchen 2
+Photo by <a href="https://unsplash.com/@figmentprints?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Cat Han</a> on <a href="https://unsplash.com/photos/white-and-black-gas-range-oven-VgyN_CWXQVM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+kitchen 3
+Photo by <a href="https://unsplash.com/@soseyinteriors?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sosey Interiors</a> on <a href="https://unsplash.com/photos/brown-wooden-seat-beside-white-wooden-kitchen-cabinet-YABErdnJPGc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+kitchen 3
+Photo by <a href="https://unsplash.com/@flaken?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Fred Kleber</a> on <a href="https://unsplash.com/photos/white-top-mount-refrigerator-beside-white-wall-mxs5EVBPPaM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+kitchen 4 ini juga dari depan - gtw bagus apa ga di blur
+Photo by <a href="https://unsplash.com/@flaken?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Fred Kleber</a> on <a href="https://unsplash.com/photos/white-top-mount-refrigerator-beside-white-wall-mxs5EVBPPaM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+ini juga kitchen mayoritas putih
+Photo by <a href="https://unsplash.com/@lotusdnp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Lotus Design N Print</a> on <a href="https://unsplash.com/photos/white-wooden-kitchen-cabinet-with-kitchen-sink-hmz7nC5mEu4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+      
+---white kitchen ini aja gitu - lotus and design print----jadinya pakai ini-----
+Photo by <a href="https://unsplash.com/@lotusdnp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Lotus Design N Print</a> on <a href="https://unsplash.com/photos/white-wooden-kitchen-cabinet-with-mirror-KWRlQNaRHSA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      

@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c17f73bc5p5x1"]
+[gd_scene load_steps=12 format=3 uid="uid://c17f73bc5p5x1"]
 
 [ext_resource type="Texture2D" uid="uid://cck3j5yvr6qjo" path="res://assets/machine-with-numbers.png" id="1_f5eh5"]
+[ext_resource type="Texture2D" uid="uid://dgdtdnc5ynvl2" path="res://assets/bg3.png" id="1_pttej"]
 [ext_resource type="Texture2D" uid="uid://dbdwmnfb2myrd" path="res://assets/bottle-pour-right-7.png" id="2_8t221"]
-[ext_resource type="Texture2D" uid="uid://ex7un5bxr1um" path="res://assets/bottle-pour-right-8.png" id="3_hxhew"]
 [ext_resource type="Texture2D" uid="uid://deg4x2jhkupp0" path="res://assets/bottle-pour-result-5.png" id="4_88gwg"]
 [ext_resource type="Texture2D" uid="uid://dg2lkq2elsv7h" path="res://assets/bottle-choice-0.png" id="5_gsrr1"]
 [ext_resource type="Texture2D" uid="uid://b1t66s2heuakp" path="res://assets/bottle-choice-1.png" id="6_ljs7k"]
@@ -10,17 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://ee1cs00y13sh" path="res://assets/bottle-choice-3.png" id="8_rqlrk"]
 [ext_resource type="Texture2D" uid="uid://dr5w7gvva6xfj" path="res://assets/bottle-choice-4.png" id="9_abnln"]
 [ext_resource type="Texture2D" uid="uid://c7yhcomlmi5lf" path="res://assets/bottle-choice-5.png" id="10_m8twy"]
+[ext_resource type="Texture2D" uid="uid://f8o2nrefhu12" path="res://assets/bottle-pour-left-8.png" id="11_3dca5"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(364, 633)
+texture = ExtResource("1_pttej")
 
 [node name="Bottle-pour-right-7" type="Sprite2D" parent="."]
 position = Vector2(622, 235.5)
 texture = ExtResource("2_8t221")
-
-[node name="Bottle-pour-right-8" type="Sprite2D" parent="."]
-position = Vector2(98, 234.5)
-texture = ExtResource("3_hxhew")
-flip_h = true
 
 [node name="Bottle-pour-result-5" type="Sprite2D" parent="."]
 position = Vector2(366, 765.5)
@@ -91,3 +91,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "40
 "
+
+[node name="Bottle-pour-left-8" type="Sprite2D" parent="."]
+position = Vector2(100, 235)
+texture = ExtResource("11_3dca5")

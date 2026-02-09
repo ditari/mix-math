@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c7yhcomlmi5lf" path="res://assets/bottle-choice-5.png" id="7_wo638"]
 [ext_resource type="Texture2D" uid="uid://d303d1f43l4wr" path="res://assets/bottle-choice-6.png" id="8_ra2nc"]
 [ext_resource type="Texture2D" uid="uid://bnoaxhhkh815l" path="res://assets/bottle-choice-7.png" id="9_k0kxq"]
-[ext_resource type="Texture2D" uid="uid://dtaaryrega5kt" path="res://assets/bottle-choice-8.png" id="10_306cs"]
+[ext_resource type="Texture2D" uid="uid://dw357pvkmqrbl" path="res://assets/bottle-choice-8.png" id="10_wfkuo"]
 [ext_resource type="Texture2D" uid="uid://cs2pnu6qnvsy5" path="res://assets/bottle-choice-9.png" id="11_1nffu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5f2g7"]
@@ -80,7 +80,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_306cs")
+"texture": ExtResource("10_wfkuo")
 }],
 "loop": false,
 "name": &"8",
@@ -115,7 +115,7 @@ script = ExtResource("1_uxbk4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5f2g7")
-animation = &"9"
+animation = &"8"
 
 [node name="label" type="Label" parent="."]
 offset_left = -42.0

@@ -15,8 +15,8 @@ var b_empty
 var b_pour_result
 var b_result
 
-var choices = [] # [5,6,7,8]
-var targetnumber #=  11
+var choices = [] 
+var targetnumber 
 
 #index yg dipilih
 var b_index1 = null
@@ -36,11 +36,10 @@ func _ready():
 	machine.connect("reset", machine_reset)	
 	machine.connect("go", machine_process)
 	
+	#place empty bottle
 	b_empty = b_empty_scene.instantiate()
 	b_empty.position = Vector2(360,775) 
 	add_child(b_empty)
-	
-
 	
 	#generate array choices angka nya dulu 
 	generate_choices_array()
@@ -209,6 +208,9 @@ func machine_process():
 		await get_tree().create_timer(0.7).timeout
 		b_pour_result.queue_free()	
 		
+		#delete label dari machine
+		machine.set_left("")
+		machine.set_right("")
 		
 		#taruh bottle result
 		b_result = b_result_scene.instantiate()

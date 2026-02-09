@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uwmm5ex7w8l1"
-path="res://.godot/imported/resetbutton.png-a1c3a98dda71a8521e83a0070951a48a.ctex"
+uid="uid://dh68h344xbjor"
+path="res://.godot/imported/bottle-pour-right-5.png-f255e90ca7d13a4929b7cc2548003049.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resetbutton.png"
-dest_files=["res://.godot/imported/resetbutton.png-a1c3a98dda71a8521e83a0070951a48a.ctex"]
+source_file="res://assets/trash2/bottle-pour-right-5.png"
+dest_files=["res://.godot/imported/bottle-pour-right-5.png-f255e90ca7d13a4929b7cc2548003049.ctex"]
 
 [params]
 

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dfs3smcewyiso" path="res://assets/bottle-pour-left-5.png" id="6_4b42r"]
 [ext_resource type="Texture2D" uid="uid://btrjamcqtujuw" path="res://assets/bottle-pour-left-6.png" id="7_k0lm8"]
 [ext_resource type="Texture2D" uid="uid://dfcgsk1ff6wwo" path="res://assets/bottle-pour-left-7.png" id="8_cqbw2"]
-[ext_resource type="Texture2D" uid="uid://dhgf65x75pdeh" path="res://assets/bottle-pour-left-8.png" id="9_t85ii"]
+[ext_resource type="Texture2D" uid="uid://f8o2nrefhu12" path="res://assets/bottle-pour-left-8.png" id="9_6xy54"]
 [ext_resource type="Texture2D" uid="uid://rjsulh7wuu0d" path="res://assets/bottle-pour-left-9.png" id="10_61fch"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5f2g7"]
@@ -79,7 +79,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_t85ii")
+"texture": ExtResource("9_6xy54")
 }],
 "loop": false,
 "name": &"8",
@@ -98,4 +98,4 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5f2g7")
-animation = &"9"
+animation = &"8"
