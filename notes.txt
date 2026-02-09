@@ -1,0 +1,16 @@
+
+F77D94 - E45770 - E02A4E red
+779EF1 - 5378DE - 2A54D7 dark blue
+A8FF6A - 83FA4D - 6ED93F light green
+FEEA69 - FADD4C - FBD61B yellow
+C7A0D5 - AF7EC2 - 9C5EB6 purple
+FFA45D - FA8740 - FB6D18 orange
+3BB486 - 299B6B - 13834D dark green
+FFA2D4 - FA85BF - FB6DB3 pink
+CAC4C1 - BCB6B3 - ABA5A1 grey--- ini ga usah?
+8FDBFF - 71CBF7 - 41BDF6 light blue
+
+white
+#FFFFFF - #F2F2F2 - #E6E6E6
+brown
+#B8A18A - #7A5A44 - #3F2A1D

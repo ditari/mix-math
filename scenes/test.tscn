@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://c17f73bc5p5x1"]
+
+[ext_resource type="Texture2D" uid="uid://cck3j5yvr6qjo" path="res://assets/machine-with-numbers.png" id="1_f5eh5"]
+[ext_resource type="Texture2D" uid="uid://dbdwmnfb2myrd" path="res://assets/bottle-pour-right-7.png" id="2_8t221"]
+[ext_resource type="Texture2D" uid="uid://ex7un5bxr1um" path="res://assets/bottle-pour-right-8.png" id="3_hxhew"]
+[ext_resource type="Texture2D" uid="uid://deg4x2jhkupp0" path="res://assets/bottle-pour-result-5.png" id="4_88gwg"]
+[ext_resource type="Texture2D" uid="uid://dg2lkq2elsv7h" path="res://assets/bottle-choice-0.png" id="5_gsrr1"]
+[ext_resource type="Texture2D" uid="uid://b1t66s2heuakp" path="res://assets/bottle-choice-1.png" id="6_ljs7k"]
+[ext_resource type="Texture2D" uid="uid://crdgqwt4ijq7u" path="res://assets/bottle-choice-2.png" id="7_ofh01"]
+[ext_resource type="Texture2D" uid="uid://ee1cs00y13sh" path="res://assets/bottle-choice-3.png" id="8_rqlrk"]
+[ext_resource type="Texture2D" uid="uid://dr5w7gvva6xfj" path="res://assets/bottle-choice-4.png" id="9_abnln"]
+[ext_resource type="Texture2D" uid="uid://c7yhcomlmi5lf" path="res://assets/bottle-choice-5.png" id="10_m8twy"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Bottle-pour-right-7" type="Sprite2D" parent="."]
+position = Vector2(622, 235.5)
+texture = ExtResource("2_8t221")
+
+[node name="Bottle-pour-right-8" type="Sprite2D" parent="."]
+position = Vector2(98, 234.5)
+texture = ExtResource("3_hxhew")
+flip_h = true
+
+[node name="Bottle-pour-result-5" type="Sprite2D" parent="."]
+position = Vector2(366, 765.5)
+texture = ExtResource("4_88gwg")
+
+[node name="Bottle-choice-0" type="Sprite2D" parent="."]
+position = Vector2(126, 980)
+texture = ExtResource("5_gsrr1")
+
+[node name="Bottle-choice-1" type="Sprite2D" parent="."]
+position = Vector2(362, 983)
+texture = ExtResource("6_ljs7k")
+
+[node name="Bottle-choice-2" type="Sprite2D" parent="."]
+position = Vector2(594, 994)
+texture = ExtResource("7_ofh01")
+
+[node name="Bottle-choice-3" type="Sprite2D" parent="."]
+position = Vector2(113, 1181)
+texture = ExtResource("8_rqlrk")
+
+[node name="Bottle-choice-4" type="Sprite2D" parent="."]
+position = Vector2(365, 1175)
+texture = ExtResource("9_abnln")
+
+[node name="Bottle-choice-5" type="Sprite2D" parent="."]
+position = Vector2(598, 1185)
+texture = ExtResource("10_m8twy")
+
+[node name="Machine-with-numbers" type="Sprite2D" parent="."]
+position = Vector2(367, 497)
+texture = ExtResource("1_f5eh5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 129.0
+offset_top = 330.0
+offset_right = 197.0
+offset_bottom = 416.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "58"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 546.0
+offset_top = 330.0
+offset_right = 614.0
+offset_bottom = 416.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "40
+"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 94.0
+offset_top = 973.0
+offset_right = 162.0
+offset_bottom = 1059.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "58"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 332.0
+offset_top = 973.0
+offset_right = 400.0
+offset_bottom = 1059.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "40
+"

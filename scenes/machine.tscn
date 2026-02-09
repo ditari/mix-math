@@ -1,26 +1,85 @@
-[gd_scene load_steps=3 format=3 uid="uid://ujh5lifk721w"]
+[gd_scene load_steps=13 format=3 uid="uid://ujh5lifk721w"]
 
 [ext_resource type="Script" path="res://scripts/machine.gd" id="1_io5b7"]
-[ext_resource type="Texture2D" uid="uid://cyyxkygpwpiai" path="res://assets/trash/machine4.png" id="2_w0qwa"]
+[ext_resource type="Texture2D" uid="uid://cck3j5yvr6qjo" path="res://assets/machine-with-numbers.png" id="2_mjjiq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtnwm"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bpqx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8loh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80qs6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wqac"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o37uo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sr3dc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sufy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pyjpk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5u0m"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Node2D" type="Node2D"]
 z_index = -10
 script = ExtResource("1_io5b7")
 
-[node name="gobutton" type="Button" parent="."]
-offset_left = -129.0
-offset_top = -55.0
-offset_right = 30.0
-offset_bottom = 39.0
-
-[node name="cancelbutton" type="Button" parent="."]
-offset_left = 45.0
-offset_top = -55.0
-offset_right = 135.0
-offset_bottom = 38.0
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_w0qwa")
+z_index = 30
+texture = ExtResource("2_mjjiq")
+
+[node name="leftlabel" type="Label" parent="Sprite2D"]
+offset_left = -247.0
+offset_top = -172.0
+offset_right = -176.0
+offset_bottom = -86.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+
+[node name="rightlabel" type="Label" parent="Sprite2D"]
+offset_left = 175.0
+offset_top = -173.0
+offset_right = 246.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+
+[node name="gobutton" type="Button" parent="."]
+offset_left = -111.0
+offset_top = -39.0
+offset_right = 24.0
+offset_bottom = 40.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtnwm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5bpqx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l8loh")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_80qs6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0wqac")
+
+[node name="resetbutton" type="Button" parent="."]
+offset_left = 32.0
+offset_top = -39.0
+offset_right = 111.0
+offset_bottom = 40.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_o37uo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sr3dc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8sufy")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_pyjpk")
+theme_override_styles/focus = SubResource("StyleBoxFlat_v5u0m")
 
 [connection signal="pressed" from="gobutton" to="." method="_on_gobutton_pressed"]
-[connection signal="pressed" from="cancelbutton" to="." method="_on_cancelbutton_pressed"]
+[connection signal="pressed" from="resetbutton" to="." method="_on_resetbutton_pressed"]

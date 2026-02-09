@@ -1,0 +1,101 @@
+[gd_scene load_steps=12 format=3 uid="uid://i3fcbqyk22kg"]
+
+[ext_resource type="Texture2D" uid="uid://v3dhpre02axa" path="res://assets/bottle-pour-result-0.png" id="1_xu80a"]
+[ext_resource type="Texture2D" uid="uid://c5nvr43no15k1" path="res://assets/bottle-pour-result-1.png" id="2_mturr"]
+[ext_resource type="Texture2D" uid="uid://5nmgob3qc8sx" path="res://assets/bottle-pour-result-2.png" id="3_twtg1"]
+[ext_resource type="Texture2D" uid="uid://do10syc3tp6v6" path="res://assets/bottle-pour-result-3.png" id="4_ggbd1"]
+[ext_resource type="Texture2D" uid="uid://dd3rxs0j3gve0" path="res://assets/bottle-pour-result-4.png" id="5_i2pmc"]
+[ext_resource type="Texture2D" uid="uid://deg4x2jhkupp0" path="res://assets/bottle-pour-result-5.png" id="6_xj27k"]
+[ext_resource type="Texture2D" uid="uid://wvt1n4x8kyso" path="res://assets/bottle-pour-result-6.png" id="7_xvj0l"]
+[ext_resource type="Texture2D" uid="uid://dnlfedj03ov7s" path="res://assets/bottle-pour-result-7.png" id="8_xa5k6"]
+[ext_resource type="Texture2D" uid="uid://dd4e88kq1gyrf" path="res://assets/bottle-pour-result-8.png" id="9_jcjhl"]
+[ext_resource type="Texture2D" uid="uid://iuxssnlh3ymt" path="res://assets/bottle-pour-result-9.png" id="10_eoyxs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5f2g7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xu80a")
+}],
+"loop": false,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mturr")
+}],
+"loop": false,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_twtg1")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ggbd1")
+}],
+"loop": false,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_i2pmc")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xj27k")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_xvj0l")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xa5k6")
+}],
+"loop": true,
+"name": &"7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_jcjhl")
+}],
+"loop": true,
+"name": &"8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_eoyxs")
+}],
+"loop": true,
+"name": &"9",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5f2g7")
+animation = &"0"

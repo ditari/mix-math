@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bisrkins1ngkx"]
+[gd_scene load_steps=2 format=3 uid="uid://x85w1muuhgol"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_pmvg7"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_k1i5j"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_pmvg7")
+script = ExtResource("1_k1i5j")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 5

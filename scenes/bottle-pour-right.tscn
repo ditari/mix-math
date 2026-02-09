@@ -1,0 +1,101 @@
+[gd_scene load_steps=12 format=3 uid="uid://djtwm7c2qtgyb"]
+
+[ext_resource type="Texture2D" uid="uid://cmshat3mqujt0" path="res://assets/bottle-pour-right-0.png" id="2_3gubo"]
+[ext_resource type="Texture2D" uid="uid://b4sijl6106ot4" path="res://assets/bottle-pour-right-1.png" id="3_5ypl7"]
+[ext_resource type="Texture2D" uid="uid://bm7vo2c1c7hoo" path="res://assets/bottle-pour-right-2.png" id="4_nwk07"]
+[ext_resource type="Texture2D" uid="uid://l3gi0lco4f2s" path="res://assets/bottle-pour-right-3.png" id="5_be3re"]
+[ext_resource type="Texture2D" uid="uid://d4clrnoue2wsj" path="res://assets/bottle-pour-right-4.png" id="6_hjk1t"]
+[ext_resource type="Texture2D" uid="uid://dh68h344xbjor" path="res://assets/bottle-pour-right-5.png" id="7_bwe62"]
+[ext_resource type="Texture2D" uid="uid://d3ho0a8tt5n32" path="res://assets/bottle-pour-right-6.png" id="8_sq5vq"]
+[ext_resource type="Texture2D" uid="uid://dbdwmnfb2myrd" path="res://assets/bottle-pour-right-7.png" id="9_vwppq"]
+[ext_resource type="Texture2D" uid="uid://ex7un5bxr1um" path="res://assets/bottle-pour-right-8.png" id="10_iqor2"]
+[ext_resource type="Texture2D" uid="uid://1c5uk84m8kxg" path="res://assets/bottle-pour-right-9.png" id="11_6ty04"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5f2g7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3gubo")
+}],
+"loop": false,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5ypl7")
+}],
+"loop": false,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nwk07")
+}],
+"loop": false,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_be3re")
+}],
+"loop": false,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_hjk1t")
+}],
+"loop": false,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_bwe62")
+}],
+"loop": false,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_sq5vq")
+}],
+"loop": false,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_vwppq")
+}],
+"loop": false,
+"name": &"7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_iqor2")
+}],
+"loop": false,
+"name": &"8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_6ty04")
+}],
+"loop": false,
+"name": &"9",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5f2g7")
+animation = &"9"
