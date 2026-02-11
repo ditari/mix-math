@@ -65,8 +65,8 @@ func generate_choices_array():
 	#emptying the choices first
 	choices = []
 	
-	#randomize number from 0 to 10
-	var numbers = range(11)   # 0–10
+	#randomize number from 1 to 10
+	var numbers = range(1,11)   # 1–10
 	numbers.shuffle()
 	
 	#get choicesarray
@@ -228,7 +228,7 @@ func machine_process():
 		else :
 			$output_label.text = "WRONG!"
 			
-		await get_tree().create_timer(0.7).timeout
+		await get_tree().create_timer(1).timeout
 		b_result.queue_free()
 		
 		#clean up

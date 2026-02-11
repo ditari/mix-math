@@ -42,28 +42,28 @@ z_index = 30
 texture = ExtResource("2_mjjiq")
 
 [node name="leftlabel" type="Label" parent="Sprite2D"]
-offset_left = -247.0
+offset_left = -262.0
 offset_top = -172.0
-offset_right = -177.0
+offset_right = -161.0
 offset_bottom = -86.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 
 [node name="rightlabel" type="Label" parent="Sprite2D"]
-offset_left = 175.0
+offset_left = 161.0
 offset_top = -173.0
-offset_right = 246.0
+offset_right = 263.0
 offset_bottom = -87.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 
 [node name="gobutton" type="Button" parent="."]
-offset_left = -114.0
+offset_left = -142.0
 offset_top = -39.0
-offset_right = 22.0
-offset_bottom = 40.0
+offset_right = 27.0
+offset_bottom = 59.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_rtnwm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5bpqx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l8loh")
@@ -71,10 +71,10 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_80qs6")
 theme_override_styles/focus = SubResource("StyleBoxFlat_0wqac")
 
 [node name="resetbutton" type="Button" parent="."]
-offset_left = 28.0
-offset_top = -39.0
-offset_right = 106.0
-offset_bottom = 40.0
+offset_left = 46.0
+offset_top = -40.0
+offset_right = 144.0
+offset_bottom = 58.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_o37uo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_sr3dc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8sufy")
