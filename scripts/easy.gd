@@ -238,7 +238,7 @@ func machine_process():
 		#sound harusnya di sini	
 		var n = str(result)[-1]
 		b_pour_result.get_node("AnimatedSprite2D").play(n)
-		await get_tree().create_timer(0.6).timeout
+		await get_tree().create_timer(0.7).timeout
 		b_pour_result.queue_free()	
 		
 		
@@ -255,7 +255,7 @@ func machine_process():
 		#animasi bottle result sebentar
 		b_result.get_node("AnimatedSprite2D").play(n)
 		b_result.set_label(result)
-		await get_tree().create_timer(0.6).timeout
+		await get_tree().create_timer(0.7).timeout
 				
 		mark.visible = true
 		#sound juga
@@ -264,7 +264,7 @@ func machine_process():
 		else :
 			mark.get_node("AnimatedSprite2D").play("wrong")			
 			
-		await get_tree().create_timer(0.6).timeout
+		await get_tree().create_timer(0.7).timeout
 		mark.visible = false
 		b_result.queue_free()
 		
