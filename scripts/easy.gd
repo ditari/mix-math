@@ -184,7 +184,7 @@ func choice_pressed(index,number):
 		#sound harusnya di sini	
 		var n = str(number)[-1]
 		pour_bottle.get_node("AnimatedSprite2D").play(n)
-		await get_tree().create_timer(0.7).timeout	
+		await get_tree().create_timer(0.6).timeout	
 		#delete pour bottle
 		pour_bottle.queue_free()	
 		
@@ -203,6 +203,11 @@ func machine_reset():
 	if processed:
 		return
 		
+	#sound di sini	
+	timer_running = false
+	await get_tree().create_timer(1.2).timeout
+
+		
 	clicked = 0
 	processed = false
 	b_index1 = null
@@ -216,7 +221,8 @@ func machine_reset():
 	
 	machine.set_left("")
 	machine.set_right("")
-		
+
+	timer_running = true
 		
 func machine_process():	
 	if clicked == 2 and processed == false:
@@ -242,7 +248,7 @@ func machine_process():
 		#sound harusnya di sini	
 		var n = str(result)[-1]
 		b_pour_result.get_node("AnimatedSprite2D").play(n)
-		await get_tree().create_timer(0.7).timeout
+		await get_tree().create_timer(0.6).timeout
 		b_pour_result.queue_free()	
 		
 		
@@ -259,7 +265,7 @@ func machine_process():
 		#animasi bottle result sebentar
 		b_result.get_node("AnimatedSprite2D").play(n)
 		b_result.set_label(result)
-		await get_tree().create_timer(0.7).timeout
+		await get_tree().create_timer(0.6).timeout
 				
 		mark.visible = true
 		#sound juga
@@ -268,7 +274,7 @@ func machine_process():
 		else :
 			mark.get_node("AnimatedSprite2D").play("wrong")			
 			
-		await get_tree().create_timer(0.7).timeout
+		await get_tree().create_timer(0.6).timeout
 		mark.visible = false
 		b_result.queue_free()
 		
