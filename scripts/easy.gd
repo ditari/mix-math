@@ -31,6 +31,10 @@ var result = null
 var clicked = 0
 var processed = false
 
+#timer
+var time_elapsed = 0.0
+var timer_running = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#placing the machine
@@ -46,12 +50,23 @@ func _ready():
 	mark.visible = false
 	add_child(mark)
 	
+	#timer
+	timer_running = true
+	
 	#generate new questions
 	generate_new_questions()
 	
+
 func _process(delta):
-	pass
-	
+	if timer_running:
+		time_elapsed += delta
+
+		var total_seconds = int(time_elapsed)
+		var minutes = total_seconds / 60
+		var seconds = total_seconds % 60
+
+		$timer_label.text = "%02d:%02d" % [minutes, seconds]
+		
 func generate_new_questions():
 	#clean up
 	processed = false
@@ -128,10 +143,14 @@ func generate_one_bottle(index, number):
 	obj.connect("button_pressed", choice_pressed)
 
 func choice_pressed(index,number):
+	
 	var pour_bottle
 	var textlabel = str(number)
 	
 	if clicked <2 and processed == false:
+		
+		#pause timer
+		timer_running = false		
 		
 		#hapus yg di bawah dulu	
 		delete_bottle_choice(index)
@@ -161,9 +180,13 @@ func choice_pressed(index,number):
 		#sound harusnya di sini	
 		var n = str(number)[-1]
 		pour_bottle.get_node("AnimatedSprite2D").play(n)
-		await get_tree().create_timer(0.7).timeout
-		pour_bottle.queue_free()
+		await get_tree().create_timer(0.7).timeout	
+		#delete pour bottle
+		pour_bottle.queue_free()	
 		
+		#restart timer
+		timer_running = true
+
 		
 func delete_bottle_choice(index):
 	for child in $bottle_choice.get_children():
@@ -191,8 +214,11 @@ func machine_reset():
 		
 
 		
-func machine_process():
+func machine_process():	
 	if clicked == 2:
+		#timer pause
+		timer_running = false
+		
 		#status = sudah di proses
 		processed = true
 		#hitung result	
@@ -212,7 +238,7 @@ func machine_process():
 		#sound harusnya di sini	
 		var n = str(result)[-1]
 		b_pour_result.get_node("AnimatedSprite2D").play(n)
-		await get_tree().create_timer(0.7).timeout
+		await get_tree().create_timer(0.6).timeout
 		b_pour_result.queue_free()	
 		
 		
@@ -243,10 +269,12 @@ func machine_process():
 		b_result.queue_free()
 		
 		#clean up
-		$output_label.text = ""
 		b_index1 = null
 		b_index2 = null
 		result = null
+		
+		#restart timer
+		timer_running = true
 		
 		#generate new questions
 		generate_new_questions()

@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpq84hdrp1ru4"]
+[gd_scene load_steps=5 format=3 uid="uid://bpq84hdrp1ru4"]
 
 [ext_resource type="Script" path="res://scripts/easy.gd" id="1_ckqlg"]
 [ext_resource type="Texture2D" uid="uid://dgdtdnc5ynvl2" path="res://assets/bg3.png" id="2_kkar2"]
 [ext_resource type="Script" path="res://scripts/bg.gd" id="2_pnj76"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ni0f"]
+bg_color = Color(1, 1, 1, 0.501961)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ckqlg")
@@ -10,6 +13,14 @@ script = ExtResource("1_ckqlg")
 [node name="bg" type="Sprite2D" parent="."]
 texture = ExtResource("2_kkar2")
 script = ExtResource("2_pnj76")
+
+[node name="timer_label" type="Label" parent="."]
+offset_right = 130.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_4ni0f")
+text = "10:10"
 
 [node name="question_label" type="Label" parent="."]
 anchors_preset = 5
@@ -27,3 +38,9 @@ text = "Make a 23!"
 horizontal_alignment = 1
 
 [node name="bottle_choice" type="Node2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
