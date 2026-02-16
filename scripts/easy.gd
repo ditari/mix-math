@@ -12,6 +12,10 @@ var b_result_scene: PackedScene = load("res://scenes/bottle-result.tscn")
 
 var mark_scene: PackedScene = load("res://scenes/mark.tscn")
 
+@onready var question_label = $CanvasLayer/Control/question_label
+@onready var timer_label = $CanvasLayer/Control/timer_label
+@onready var score_label = $CanvasLayer/Control/score_label
+
 var machine
 var b_empty
 var b_pour_result
@@ -65,7 +69,7 @@ func _process(delta):
 		var minutes = total_seconds / 60
 		var seconds = total_seconds % 60
 
-		$timer_label.text = "%02d:%02d" % [minutes, seconds]
+		timer_label.text = "%02d:%02d" % [minutes, seconds]
 		
 func generate_new_questions():
 	#clean up
@@ -106,7 +110,7 @@ func generate_choices_array():
 	var index2 = nums[1]
 	
 	target_number = choices[index1] + choices[index2]
-	$question_label.text = "Make a " + str(target_number) + "!"
+	question_label.text = "Make a " + str(target_number) + "!"
 	
 func generate_choices_bottle():
 	for child in $bottle_choice.get_children():
@@ -195,6 +199,7 @@ func delete_bottle_choice(index):
 			break
 
 func machine_reset():
+	
 	if processed:
 		return
 		
@@ -212,10 +217,9 @@ func machine_reset():
 	machine.set_left("")
 	machine.set_right("")
 		
-
 		
 func machine_process():	
-	if clicked == 2:
+	if clicked == 2 and processed == false:
 		#timer pause
 		timer_running = false
 		
