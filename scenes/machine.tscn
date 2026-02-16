@@ -34,7 +34,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Node2D" type="Node2D"]
-z_index = -10
+z_index = 10
 script = ExtResource("1_io5b7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

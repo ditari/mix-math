@@ -10,10 +10,13 @@ var b_pour_result_scene: PackedScene = load("res://scenes/bottle-pour-result.tsc
 
 var b_result_scene: PackedScene = load("res://scenes/bottle-result.tscn")
 
+var mark_scene: PackedScene = load("res://scenes/mark.tscn")
+
 var machine
 var b_empty
 var b_pour_result
 var b_result
+var mark
 
 var question_number = 0
 var choices
@@ -36,6 +39,12 @@ func _ready():
 	add_child(machine)
 	machine.connect("reset", machine_reset)	
 	machine.connect("go", machine_process)
+	
+	#mark instantiate but not visible
+	mark = mark_scene.instantiate()
+	mark.position = Vector2(360,800) 
+	mark.visible = false
+	add_child(mark)
 	
 	#generate new questions
 	generate_new_questions()
@@ -136,7 +145,7 @@ func choice_pressed(index,number):
 			pour_bottle = b_pour_left_scene.instantiate()
 			add_child(pour_bottle)
 		
-			pour_bottle.position = Vector2(140,240)
+			pour_bottle.position = Vector2(140,250)
 			
 			
 		if clicked == 2:
@@ -146,7 +155,7 @@ func choice_pressed(index,number):
 			pour_bottle = b_pour_right_scene.instantiate()
 			#$bottle_pour.add_child(pour_bottle)			
 			add_child(pour_bottle)
-			pour_bottle.position = Vector2(570,240)
+			pour_bottle.position = Vector2(570,250)
 			
 			
 		#sound harusnya di sini	
@@ -220,15 +229,17 @@ func machine_process():
 		#animasi bottle result sebentar
 		b_result.get_node("AnimatedSprite2D").play(n)
 		b_result.set_label(result)
-		
-		#animasi correct or wrong here
+		await get_tree().create_timer(0.6).timeout
+				
+		mark.visible = true
 		#sound juga
 		if correct :
-			$output_label.text = "CORRECT!"
+			mark.get_node("AnimatedSprite2D").play("correct")
 		else :
-			$output_label.text = "WRONG!"
+			mark.get_node("AnimatedSprite2D").play("wrong")			
 			
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.6).timeout
+		mark.visible = false
 		b_result.queue_free()
 		
 		#clean up
