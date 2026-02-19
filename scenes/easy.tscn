@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpq84hdrp1ru4"]
+[gd_scene load_steps=6 format=3 uid="uid://bpq84hdrp1ru4"]
 
 [ext_resource type="Script" path="res://scripts/easy.gd" id="1_ckqlg"]
 [ext_resource type="Texture2D" uid="uid://h3klnunufcjh" path="res://assets/bg4.png" id="2_dhsot"]
 [ext_resource type="Script" path="res://scripts/bg.gd" id="2_pnj76"]
+[ext_resource type="Texture2D" uid="uid://b6foeml5uqbrb" path="res://assets/button-a.png" id="4_2hcji"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_65e5r"]
+texture = ExtResource("4_2hcji")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ckqlg")
@@ -44,8 +52,7 @@ offset_bottom = 92.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "Score: 100
-"
+text = "Score : 0"
 horizontal_alignment = 2
 
 [node name="question_label" type="Label" parent="CanvasLayer/Control"]
@@ -63,5 +70,103 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "Make a 23!"
 horizontal_alignment = 1
+
+[node name="end_level" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="dimbackground" type="ColorRect" parent="CanvasLayer/end_level"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.815686)
+
+[node name="completed_label" type="Label" parent="CanvasLayer/end_level"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -155.5
+offset_top = 200.0
+offset_right = 155.5
+offset_bottom = 286.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 70
+text = "Level 
+Completed!"
+horizontal_alignment = 1
+
+[node name="total_score_label" type="Label" parent="CanvasLayer/end_level"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -357.0
+offset_top = 628.0
+offset_right = 360.0
+offset_bottom = 726.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Score: 100"
+horizontal_alignment = 1
+
+[node name="avg_time_label" type="Label" parent="CanvasLayer/end_level"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -358.0
+offset_top = 704.0
+offset_right = 361.0
+offset_bottom = 794.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Average Time: 5s"
+horizontal_alignment = 1
+
+[node name="replay_button" type="Button" parent="CanvasLayer/end_level"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.428
+anchor_top = 0.548
+anchor_right = 0.428
+anchor_bottom = 0.548
+offset_left = -194.16
+offset_top = 253.56
+offset_right = 42.84
+offset_bottom = 356.56
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_65e5r")
+text = "REPLAY"
+
+[node name="menu_button" type="Button" parent="CanvasLayer/end_level"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.428
+anchor_top = 0.548
+anchor_right = 0.428
+anchor_bottom = 0.548
+offset_left = 139.84
+offset_top = 253.56
+offset_right = 356.84
+offset_bottom = 356.56
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_65e5r")
+text = "MENU"
 
 [node name="bottle_choice" type="Node2D" parent="."]
