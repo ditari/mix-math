@@ -69,20 +69,22 @@ func _ready():
 	var screen_height = get_viewport_rect().size.y
 
 	#for bottle choice
-	leftbottlechoice_x = int((screen_width - 264)/3)+ 66
-	rightbottlechoice_x = screen_width - int((screen_width - 264)/3) - 66
-	topbottlechoice_y = int(screen_height*0.75)
-	downbottlechoice_y = int (screen_height*0.9)
+	var gaps = int((screen_width - 264)/3)
+	leftbottlechoice_x = gaps + 66
+	rightbottlechoice_x = screen_width - gaps - 66
+	topbottlechoice_y = int(screen_height*0.75) + 25
+	downbottlechoice_y = int (screen_height*0.9) + 25
 	
 	#label
 	score_label.position.y = int(0.015*screen_height)
 	timer_label.position.y = int(0.015*screen_height)
-	question_label.position.y = int(0.2*screen_height)
+	#question_label.position.y = int(0.2*screen_height) +50
+	$CanvasLayer/Control/PanelContainer.position.y = int(0.08*screen_height)
 	
 	#placing the machine
 	machine = machine_scene.instantiate()
 	machine_x = int(screen_width/2)
-	machine_y = int(0.4*screen_height)
+	machine_y = int(0.4*screen_height) + 25
 	machine.position = Vector2(machine_x, machine_y) 
 	
 	add_child(machine)
