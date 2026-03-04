@@ -242,7 +242,7 @@ func choice_pressed(index,number):
 			pour_bottle.position = Vector2(machine_x + 220,machine_y-250)
 			
 			
-		#sound harusnya di sini	
+		AudioController.play_pourshort()
 		var n = str(number)[-1]
 		pour_bottle.get_node("AnimatedSprite2D").play(n)
 		
@@ -278,6 +278,9 @@ func machine_reset():
 	b_index2 = null
 	result = null
 	
+	machine.get_node("AnimatedSprite2D").play("reset")
+	await get_tree().create_timer(0.2).timeout
+	
 	for child in $bottle_choice.get_children():
 		child.queue_free()
 
@@ -285,6 +288,8 @@ func machine_reset():
 	
 	machine.set_left("")
 	machine.set_right("")
+	
+	machine.get_node("AnimatedSprite2D").play("default")
 	
 	interaction_locked = false	
 		
@@ -310,17 +315,26 @@ func machine_process():
 		if is_instance_valid(b_empty):
 			b_empty.queue_free()
 		
-		#animasi bottle pour result, sebentar lalu dihapus
+		#animasi button machine dulu
+		machine.get_node("AnimatedSprite2D").play("go")
+		AudioController.play_beepshort()
+		
+		#animasi bottle pour result
 		b_pour_result = b_pour_result_scene.instantiate()
 		b_pour_result.position = Vector2(machine_x,machine_y+257) #check this later
 		add_child(b_pour_result)
 		
-		#sound harusnya di sini	
+		
+		
+		#sound harusnya di sini
+		AudioController.play_pourshort()	
 		var n = str(result)[-1]
 		b_pour_result.get_node("AnimatedSprite2D").play(n)
 		await get_tree().create_timer(0.4).timeout #edit
 		b_pour_result.queue_free()	
 		
+		#animasi button machine kembali default
+		machine.get_node("AnimatedSprite2D").play("default")
 		
 		#delete label dari machine
 		machine.set_left("")

@@ -1,7 +1,36 @@
-[gd_scene load_steps=13 format=3 uid="uid://ujh5lifk721w"]
+[gd_scene load_steps=16 format=3 uid="uid://ujh5lifk721w"]
 
 [ext_resource type="Script" path="res://scripts/machine.gd" id="1_io5b7"]
 [ext_resource type="Texture2D" uid="uid://cck3j5yvr6qjo" path="res://assets/machine-with-numbers.png" id="2_mjjiq"]
+[ext_resource type="Texture2D" uid="uid://bw67yrxp1a6xu" path="res://assets/machine-go.png" id="3_72tjf"]
+[ext_resource type="Texture2D" uid="uid://b6k2igcrxmcbe" path="res://assets/machine-reset.png" id="4_65y66"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_logdb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mjjiq")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_72tjf")
+}],
+"loop": false,
+"name": &"go",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_65y66")
+}],
+"loop": false,
+"name": &"reset",
+"speed": 5.0
+}]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtnwm"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -37,11 +66,10 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 z_index = 10
 script = ExtResource("1_io5b7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 30
-texture = ExtResource("2_mjjiq")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_logdb")
 
-[node name="leftlabel" type="Label" parent="Sprite2D"]
+[node name="leftlabel" type="Label" parent="AnimatedSprite2D"]
 offset_left = -262.0
 offset_top = -172.0
 offset_right = -161.0
@@ -50,7 +78,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 
-[node name="rightlabel" type="Label" parent="Sprite2D"]
+[node name="rightlabel" type="Label" parent="AnimatedSprite2D"]
 offset_left = 161.0
 offset_top = -173.0
 offset_right = 263.0
