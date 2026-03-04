@@ -246,7 +246,7 @@ func choice_pressed(index,number):
 		var n = str(number)[-1]
 		pour_bottle.get_node("AnimatedSprite2D").play(n)
 		
-		await get_tree().create_timer(0.35).timeout	
+		await get_tree().create_timer(0.3).timeout	
 		
 		#delete pour bottle
 		if is_instance_valid(pour_bottle):
