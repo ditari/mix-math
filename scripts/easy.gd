@@ -15,7 +15,7 @@ var stars_scene: PackedScene = load("res://scenes/stars.tscn")
 
 
 
-@onready var question_label = $CanvasLayer/Control/question_label
+@onready var question_label = $CanvasLayer/Control/PanelContainer/question_label
 @onready var timer_label = $CanvasLayer/Control/timer_label
 @onready var score_label = $CanvasLayer/Control/score_label
 
@@ -27,6 +27,10 @@ var mark
 
 var max_question = 10
 var question_number = 0
+
+var total_correct_times = 0 
+var total_correct_question = 0
+
 var choices
 var target_number 
 var score = 0
@@ -82,7 +86,7 @@ func _process(delta):
 		
 	if question_number > max_question:
 		timer_running = false
-		end_level()
+		end_level(time_elapsed)
 		
 func generate_new_questions():
 	#additional code
@@ -128,7 +132,12 @@ func generate_choices_array():
 	var index2 = nums[1]
 	
 	target_number = choices[index1] + choices[index2]
-	question_label.text = "Make a " + str(target_number) + "!"
+	
+	#mencegah target_number sudah ada di choices
+	if choices.has(target_number):
+		target_number = choices.max() + choices.min()
+	
+	question_label.text = "Mix a " + str(target_number) + "!"
 	
 func generate_choices_bottle():
 	for child in $bottle_choice.get_children():
@@ -207,7 +216,7 @@ func choice_pressed(index,number):
 		var n = str(number)[-1]
 		pour_bottle.get_node("AnimatedSprite2D").play(n)
 		
-		await get_tree().create_timer(0.6).timeout	
+		await get_tree().create_timer(0.3).timeout	
 		
 		#delete pour bottle
 		if is_instance_valid(pour_bottle):
@@ -279,7 +288,7 @@ func machine_process():
 		#sound harusnya di sini	
 		var n = str(result)[-1]
 		b_pour_result.get_node("AnimatedSprite2D").play(n)
-		await get_tree().create_timer(0.6).timeout
+		await get_tree().create_timer(0.4).timeout
 		b_pour_result.queue_free()	
 		
 		
@@ -305,17 +314,19 @@ func machine_process():
 			timer_question_end = time_elapsed
 			var solve_time = timer_question_end - timer_question_start
 			
+			total_correct_question = total_correct_question+1
+			total_correct_times = total_correct_times+solve_time
+			
 			#untuk easy
 			if solve_time < 6 :
 				score = score + 100
-			elif solve_time < 8 :
+			elif solve_time < 9 :
 				score = score + 80
 			elif solve_time < 12 :
 				score = score + 60	
-			elif solve_time < 18 :
+			else :
 				score = score + 40	
-			else:
-				score = score + 20
+			
 		else :
 			mark.get_node("AnimatedSprite2D").play("wrong")			
 			
@@ -338,17 +349,31 @@ func machine_process():
 
 		interaction_locked = false
 
-func end_level():
+func end_level(time_elapsed):
 	$CanvasLayer/end_level.visible = true
 	
-	var avg_time = int(time_elapsed)/10
-	$CanvasLayer/end_level/avg_time_label.text = "AVG TIME: "+ str(avg_time) + "s"
+	var avg_time = 0
+	
+	if total_correct_question > 0:			
+		avg_time = snapped(total_correct_times/total_correct_question, 0.1 )
+	#var avg_time = snapped(time_elapsed/max_question, 0.1)
+	
+	$CanvasLayer/end_level/avg_time_label.text = "AVG. TIME: "+ str(avg_time) + "s"
 	
 	$CanvasLayer/end_level/total_score_label.text = "SCORE: " + str(score)
 
 	var stars = stars_scene.instantiate()
 	$CanvasLayer/end_level.add_child(stars)
-	stars.set_stars(1)
 	stars.position = Vector2(360,500)
 	
-	
+	if (total_correct_question>=9) and (avg_time <= 8):
+		stars.set_stars(3)	
+	elif (total_correct_question>=8) and (avg_time <= 12):
+		stars.set_stars(2)
+	elif (total_correct_question>=6):
+		stars.set_stars(1)
+	else :
+		stars.visible = false
+
+	if total_correct_question == 0:
+		$CanvasLayer/end_level/completed_label.text = "TRY AGAIN!"

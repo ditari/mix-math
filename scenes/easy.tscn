@@ -1,9 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpq84hdrp1ru4"]
+[gd_scene load_steps=7 format=3 uid="uid://bpq84hdrp1ru4"]
 
 [ext_resource type="Script" path="res://scripts/easy.gd" id="1_ckqlg"]
 [ext_resource type="Texture2D" uid="uid://h3klnunufcjh" path="res://assets/bg4.png" id="2_dhsot"]
 [ext_resource type="Script" path="res://scripts/bg.gd" id="2_pnj76"]
 [ext_resource type="Texture2D" uid="uid://b6foeml5uqbrb" path="res://assets/button-a.png" id="4_2hcji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0ltq"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_65e5r"]
 texture = ExtResource("4_2hcji")
@@ -55,16 +71,20 @@ theme_override_font_sizes/font_size = 50
 text = "Score : 0"
 horizontal_alignment = 2
 
-[node name="question_label" type="Label" parent="CanvasLayer/Control"]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -155.5
-offset_top = 90.0
-offset_right = 155.5
-offset_bottom = 176.0
+offset_left = -165.5
+offset_top = 100.0
+offset_right = 165.5
+offset_bottom = 206.0
 grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_u0ltq")
+
+[node name="question_label" type="Label" parent="CanvasLayer/Control/PanelContainer"]
+layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
