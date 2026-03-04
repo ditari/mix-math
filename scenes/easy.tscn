@@ -6,20 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://b6foeml5uqbrb" path="res://assets/button-a.png" id="4_2hcji"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0ltq"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
+bg_color = Color(1, 1, 1, 0.501961)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
-expand_margin_left = 5.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
+corner_detail = 5
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_65e5r"]
 texture = ExtResource("4_2hcji")
@@ -77,9 +74,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -165.5
-offset_top = 100.0
+offset_top = 90.0
 offset_right = 165.5
-offset_bottom = 206.0
+offset_bottom = 196.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_u0ltq")
 

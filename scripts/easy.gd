@@ -56,14 +56,14 @@ var timer_question_end
 func _ready():
 	#placing the machine
 	machine = machine_scene.instantiate()
-	machine.position = Vector2(360,500) #nanti posisikan dynamic
+	machine.position = Vector2(360,530) #nanti posisikan dynamic
 	add_child(machine)
 	machine.connect("reset", machine_reset)	
 	machine.connect("go", machine_process)
 	
 	#mark instantiate but not visible
 	mark = mark_scene.instantiate()
-	mark.position = Vector2(360,800) 
+	mark.position = Vector2(360,830) 
 	mark.visible = false
 	add_child(mark)
 	
@@ -103,7 +103,7 @@ func generate_new_questions():
 	
 	#place empty bottle
 	b_empty = b_empty_scene.instantiate()
-	b_empty.position = Vector2(360,775) 
+	b_empty.position = Vector2(360,805) 
 	add_child(b_empty)
 	
 	#generate array choices angka nya dulu 
@@ -152,16 +152,16 @@ func generate_one_bottle(index, number):
 	var obj = b_choice_scene.instantiate()
 	
 	if index == 0:
-		obj.position = Vector2(200,950) 
+		obj.position = Vector2(200,980) 
 		obj.index = 0 	
 	elif index == 1:
-		obj.position = Vector2(500,950) 
+		obj.position = Vector2(500,980) 
 		obj.index = 1 			
 	elif index == 2:
-		obj.position = Vector2(200,1150) 
+		obj.position = Vector2(200,1170) 
 		obj.index = 2 				
 	else :
-		obj.position = Vector2(500,1150) 
+		obj.position = Vector2(500,1170) 
 		obj.index = 3 	
 				
 	$bottle_choice.add_child(obj)	
@@ -199,7 +199,7 @@ func choice_pressed(index,number):
 			pour_bottle = b_pour_left_scene.instantiate()
 			add_child(pour_bottle)
 		
-			pour_bottle.position = Vector2(140,250)
+			pour_bottle.position = Vector2(140,280)
 			
 			
 		if clicked == 2:
@@ -209,14 +209,14 @@ func choice_pressed(index,number):
 			pour_bottle = b_pour_right_scene.instantiate()
 			#$bottle_pour.add_child(pour_bottle)			
 			add_child(pour_bottle)
-			pour_bottle.position = Vector2(570,250)
+			pour_bottle.position = Vector2(570,280)
 			
 			
 		#sound harusnya di sini	
 		var n = str(number)[-1]
 		pour_bottle.get_node("AnimatedSprite2D").play(n)
 		
-		await get_tree().create_timer(0.3).timeout	
+		await get_tree().create_timer(0.35).timeout	
 		
 		#delete pour bottle
 		if is_instance_valid(pour_bottle):
@@ -282,13 +282,13 @@ func machine_process():
 		
 		#animasi bottle pour result, sebentar lalu dihapus
 		b_pour_result = b_pour_result_scene.instantiate()
-		b_pour_result.position = Vector2(360,757)
+		b_pour_result.position = Vector2(360,787)
 		add_child(b_pour_result)
 		
 		#sound harusnya di sini	
 		var n = str(result)[-1]
 		b_pour_result.get_node("AnimatedSprite2D").play(n)
-		await get_tree().create_timer(0.4).timeout
+		await get_tree().create_timer(0.4).timeout #edit
 		b_pour_result.queue_free()	
 		
 		
@@ -299,7 +299,7 @@ func machine_process():
 		
 		#taruh bottle result
 		b_result = b_result_scene.instantiate()
-		b_result.position = Vector2(360,775) 
+		b_result.position = Vector2(360,805) 
 		add_child(b_result)
 		
 		#animasi bottle result sebentar
