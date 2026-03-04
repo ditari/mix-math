@@ -65,7 +65,7 @@ offset_bottom = 92.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "Score : 0"
+text = "Score: 0"
 horizontal_alignment = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control"]

@@ -53,17 +53,45 @@ var timer_running = false #timer when activity happened (no animation)
 var timer_question_start
 var timer_question_end
 
+#---untuk positioning--
+var screen_width
+var screen_height
+var machine_x
+var machine_y
+var leftbottlechoice_x
+var rightbottlechoice_x
+var topbottlechoice_y
+var downbottlechoice_y
+
 func _ready():
+	#ui width height
+	var screen_width = get_viewport_rect().size.x
+	var screen_height = get_viewport_rect().size.y
+
+	#for bottle choice
+	leftbottlechoice_x = int((screen_width - 264)/3)+ 66
+	rightbottlechoice_x = screen_width - int((screen_width - 264)/3) - 66
+	topbottlechoice_y = int(screen_height*0.75)
+	downbottlechoice_y = int (screen_height*0.9)
+	
+	#label
+	score_label.position.y = int(0.015*screen_height)
+	timer_label.position.y = int(0.015*screen_height)
+	question_label.position.y = int(0.2*screen_height)
+	
 	#placing the machine
 	machine = machine_scene.instantiate()
-	machine.position = Vector2(360,530) #nanti posisikan dynamic
+	machine_x = int(screen_width/2)
+	machine_y = int(0.4*screen_height)
+	machine.position = Vector2(machine_x, machine_y) 
+	
 	add_child(machine)
 	machine.connect("reset", machine_reset)	
 	machine.connect("go", machine_process)
 	
 	#mark instantiate but not visible
 	mark = mark_scene.instantiate()
-	mark.position = Vector2(360,830) 
+	mark.position = Vector2(machine_x,machine_y+300) 
 	mark.visible = false
 	add_child(mark)
 	
@@ -103,7 +131,7 @@ func generate_new_questions():
 	
 	#place empty bottle
 	b_empty = b_empty_scene.instantiate()
-	b_empty.position = Vector2(360,805) 
+	b_empty.position = Vector2(machine_x,machine_y+275) 
 	add_child(b_empty)
 	
 	#generate array choices angka nya dulu 
@@ -152,16 +180,16 @@ func generate_one_bottle(index, number):
 	var obj = b_choice_scene.instantiate()
 	
 	if index == 0:
-		obj.position = Vector2(200,980) 
+		obj.position = Vector2(leftbottlechoice_x,topbottlechoice_y) 
 		obj.index = 0 	
 	elif index == 1:
-		obj.position = Vector2(500,980) 
+		obj.position = Vector2(rightbottlechoice_x,topbottlechoice_y) 
 		obj.index = 1 			
 	elif index == 2:
-		obj.position = Vector2(200,1170) 
+		obj.position = Vector2(leftbottlechoice_x,downbottlechoice_y) 
 		obj.index = 2 				
 	else :
-		obj.position = Vector2(500,1170) 
+		obj.position = Vector2(rightbottlechoice_x,downbottlechoice_y) 
 		obj.index = 3 	
 				
 	$bottle_choice.add_child(obj)	
@@ -199,7 +227,7 @@ func choice_pressed(index,number):
 			pour_bottle = b_pour_left_scene.instantiate()
 			add_child(pour_bottle)
 		
-			pour_bottle.position = Vector2(140,280)
+			pour_bottle.position = Vector2(machine_x-220,machine_y-250)
 			
 			
 		if clicked == 2:
@@ -209,7 +237,7 @@ func choice_pressed(index,number):
 			pour_bottle = b_pour_right_scene.instantiate()
 			#$bottle_pour.add_child(pour_bottle)			
 			add_child(pour_bottle)
-			pour_bottle.position = Vector2(570,280)
+			pour_bottle.position = Vector2(machine_x + 220,machine_y-250)
 			
 			
 		#sound harusnya di sini	
@@ -282,7 +310,7 @@ func machine_process():
 		
 		#animasi bottle pour result, sebentar lalu dihapus
 		b_pour_result = b_pour_result_scene.instantiate()
-		b_pour_result.position = Vector2(360,787)
+		b_pour_result.position = Vector2(machine_x,machine_y+257) #check this later
 		add_child(b_pour_result)
 		
 		#sound harusnya di sini	
@@ -299,7 +327,7 @@ func machine_process():
 		
 		#taruh bottle result
 		b_result = b_result_scene.instantiate()
-		b_result.position = Vector2(360,805) 
+		b_result.position = Vector2(machine_x,machine_y+275) 
 		add_child(b_result)
 		
 		#animasi bottle result sebentar
