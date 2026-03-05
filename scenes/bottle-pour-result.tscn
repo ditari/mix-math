@@ -98,4 +98,4 @@ animations = [{
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5f2g7")
-animation = &"8"
+animation = &"0"

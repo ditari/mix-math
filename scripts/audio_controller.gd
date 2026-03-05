@@ -8,3 +8,9 @@ func play_pourlong():
 	
 func play_beepshort():
 	$beep_short.play()
+	
+func play_correct():
+	$correct.play()
+	
+func play_wrong():
+	$wrong.play()

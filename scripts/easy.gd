@@ -279,6 +279,7 @@ func machine_reset():
 	result = null
 	
 	machine.get_node("AnimatedSprite2D").play("reset")
+	AudioController.play_beepshort()	
 	await get_tree().create_timer(0.2).timeout
 	
 	for child in $bottle_choice.get_children():
@@ -311,20 +312,21 @@ func machine_process():
 		var correct = result == target_number
 		#tambah score di sini
 		
+		#animasi button machine dulu
+		machine.get_node("AnimatedSprite2D").play("go")
+		AudioController.play_beepshort()	
+		await get_tree().create_timer(0.2).timeout
+		#animasi button machine kembali default
+		machine.get_node("AnimatedSprite2D").play("default")
+		
 		#delete emptycup
 		if is_instance_valid(b_empty):
 			b_empty.queue_free()
 		
-		#animasi button machine dulu
-		machine.get_node("AnimatedSprite2D").play("go")
-		AudioController.play_beepshort()
-		
-		#animasi bottle pour result
+		#animasi bottle pour result, sebentar lalu dihapus
 		b_pour_result = b_pour_result_scene.instantiate()
 		b_pour_result.position = Vector2(machine_x,machine_y+257) #check this later
 		add_child(b_pour_result)
-		
-		
 		
 		#sound harusnya di sini
 		AudioController.play_pourshort()	
@@ -333,8 +335,7 @@ func machine_process():
 		await get_tree().create_timer(0.4).timeout #edit
 		b_pour_result.queue_free()	
 		
-		#animasi button machine kembali default
-		machine.get_node("AnimatedSprite2D").play("default")
+
 		
 		#delete label dari machine
 		machine.set_left("")
@@ -354,6 +355,7 @@ func machine_process():
 		mark.visible = true
 		#sound juga
 		if correct :
+			AudioController.play_correct()
 			mark.get_node("AnimatedSprite2D").play("correct")
 			timer_question_end = time_elapsed
 			var solve_time = timer_question_end - timer_question_start
@@ -372,6 +374,7 @@ func machine_process():
 				score = score + 40	
 			
 		else :
+			AudioController.play_wrong()
 			mark.get_node("AnimatedSprite2D").play("wrong")			
 			
 		score_label.text = "Score: " + str (score)
