@@ -4,8 +4,8 @@
 [ext_resource type="AudioStream" uid="uid://bcjwfw0qyonvy" path="res://assets/audio/pour_short.wav" id="2_le656"]
 [ext_resource type="AudioStream" uid="uid://e6w3dyld6vmo" path="res://assets/audio/beep_short.wav" id="3_scbe3"]
 [ext_resource type="AudioStream" uid="uid://bodp07vsu21a4" path="res://assets/audio/pour_long.wav" id="4_51qfb"]
-[ext_resource type="AudioStream" uid="uid://c2ybblmo4ktre" path="res://assets/audio/buzz.wav" id="5_d7trl"]
-[ext_resource type="AudioStream" uid="uid://65kxj61jyg78" path="res://assets/audio/glass_ding.wav" id="6_skrnp"]
+[ext_resource type="AudioStream" uid="uid://65kxj61jyg78" path="res://assets/audio/glass_ding.wav" id="5_t21j4"]
+[ext_resource type="AudioStream" uid="uid://ch7amgs6um26j" path="res://assets/audio/wrong.wav" id="6_nv7ql"]
 
 [node name="audio_controller" type="Node2D"]
 script = ExtResource("1_kch6k")
@@ -19,8 +19,8 @@ stream = ExtResource("3_scbe3")
 [node name="pour_long" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_51qfb")
 
-[node name="wrong" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_d7trl")
-
 [node name="correct" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_skrnp")
+stream = ExtResource("5_t21j4")
+
+[node name="wrong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_nv7ql")
